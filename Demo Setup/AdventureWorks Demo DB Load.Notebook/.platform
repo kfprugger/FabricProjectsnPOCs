@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "AdventureWorks Demo DB Load",
+    "description": "# coding: utf-8\n\n# ##  AdventureWorks OLTP Data Ingestion Notebook\n# \n# This notebook automates the process of downloading the AdventureWorks OLTP sample data scripts and CSV files from GitHub, saving them to the Fabric Lakehouse, and converting the CSV data into managed Delta tables.\n# \n# **Key Features:**\n# * **Automated File Discovery**: Uses the GitHub API to find all files, so no hardcoded lists are needed.\n# * **Idempotent Downloads**: Checks for existing files and skips them to avoid re-downloading.\n# * **Robust Encoding Handling**: Attempts to decode files using multiple text encodings (UTF-8-SIG, UTF-16).\n# * **Dynamic Schema Detection**: Automatically writes to the `dbo` schema if it exists in the Lakehouse, otherwise falls back to `default`.\n# * **Comprehensive Logging**: Provides detailed progress updates and error messages.\n# * **Metadata Summary**: Generates a summary table of all created tables with row and column counts."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "080e4e0b-a2ce-8b1b-4374-da3dd825b09a"
+  }
+}
