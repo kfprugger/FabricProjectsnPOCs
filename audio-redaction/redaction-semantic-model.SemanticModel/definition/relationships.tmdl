@@ -1,0 +1,20 @@
+relationship 931aa047-5323-a953-92b9-76a318054b67
+	fromColumn: key_phrases.TranscriptionId
+	toColumn: transcripts.TranscriptionId
+
+relationship 7de0f149-5a39-c47b-cef2-8c67f0a32591
+	fromColumn: pii_entities.TranscriptionId
+	toColumn: transcripts.TranscriptionId
+
+relationship 4e376a17-03c8-a7b1-c1cb-4b5afaaa596b
+	fromColumn: sentence_sentiments.TranscriptionId
+	toColumn: transcripts.TranscriptionId
+
+relationship 69f22082-3cd7-5c79-d2a7-2de4a4eea343
+	fromColumn: transcript_phrases.TranscriptionId
+	toColumn: transcripts.TranscriptionId
+
+relationship 908c4819-b83c-5273-7711-d67e9af34d14
+	fromColumn: transcripts.TranscriptionId
+	toColumn: transcribe_log.TranscriptionId
+

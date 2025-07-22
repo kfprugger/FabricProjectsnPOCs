@@ -1,0 +1,98 @@
+table transcribe_log
+	lineageTag: 437b8c42-3f46-4f98-a05b-6841749a3074
+	sourceLineageTag: [dbo].[transcribe_log]
+
+	column TranscriptionId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 69007de4-52ed-45e0-be07-913b69ca8987
+		sourceLineageTag: TranscriptionId
+		summarizeBy: none
+		sourceColumn: TranscriptionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AudioFileName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7eeddf84-2473-4f4f-8a75-5df41d2e3d5e
+		sourceLineageTag: AudioFileName
+		summarizeBy: none
+		sourceColumn: AudioFileName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessingTimestamp
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1ab9fd67-ee7f-40f0-bc25-8984ea461be3
+		sourceLineageTag: ProcessingTimestamp
+		summarizeBy: none
+		sourceColumn: ProcessingTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessingStatus
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0695eb4f-0edc-4e66-9660-7dccfd5f23f4
+		sourceLineageTag: ProcessingStatus
+		summarizeBy: none
+		sourceColumn: ProcessingStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusDetails
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5771bcea-dd75-4da0-b723-dfbea822cf4b
+		sourceLineageTag: StatusDetails
+		summarizeBy: none
+		sourceColumn: StatusDetails
+
+		annotation SummarizationSetBy = Automatic
+
+	column CallDurationHms
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 10dc6b78-7b55-43a6-a36e-7d7438a92cc0
+		sourceLineageTag: CallDurationHms
+		summarizeBy: none
+		sourceColumn: CallDurationHms
+
+		annotation SummarizationSetBy = Automatic
+
+	column TranscriptionTimeSeconds
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 72224b27-3134-4527-ac26-a8748ccfe16a
+		sourceLineageTag: TranscriptionTimeSeconds
+		summarizeBy: none
+		sourceColumn: TranscriptionTimeSeconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AnalysisTimeSeconds
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 1ee4a15c-f737-4728-ac39-568db116c55f
+		sourceLineageTag: AnalysisTimeSeconds
+		summarizeBy: none
+		sourceColumn: AnalysisTimeSeconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition transcribe_log = entity
+		mode: directLake
+		source
+			entityName: transcribe_log
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

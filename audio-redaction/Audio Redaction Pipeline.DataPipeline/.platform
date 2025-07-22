@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Audio Redaction Pipeline"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e6c28fa9-43ea-bcaa-4b70-570e25138aa8"
+  }
+}

@@ -1,0 +1,89 @@
+table transcript_phrases
+	lineageTag: 2528aa47-11ae-4b6d-9b3d-5aaede3818b8
+	sourceLineageTag: [dbo].[transcript_phrases]
+
+	column PhraseId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d2ca13a3-ae44-42b1-b84c-bcf4142b59f1
+		sourceLineageTag: PhraseId
+		summarizeBy: none
+		sourceColumn: PhraseId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TranscriptionId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6702ed5d-7a45-46a6-a0b2-c7e51e543c4b
+		sourceLineageTag: TranscriptionId
+		summarizeBy: none
+		sourceColumn: TranscriptionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpeakerId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7385efd2-6444-4081-b163-a018c36b1078
+		sourceLineageTag: SpeakerId
+		summarizeBy: none
+		sourceColumn: SpeakerId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhraseText
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3ec8c728-6410-49e8-b0e8-9afed391e469
+		sourceLineageTag: PhraseText
+		summarizeBy: none
+		sourceColumn: PhraseText
+
+		annotation SummarizationSetBy = Automatic
+
+	column OffsetInSeconds
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 536707c6-e2c1-4165-a09e-90f24b415327
+		sourceLineageTag: OffsetInSeconds
+		summarizeBy: sum
+		sourceColumn: OffsetInSeconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DurationInSeconds
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 32d6b799-153e-42cf-8b40-0abea0e4b946
+		sourceLineageTag: DurationInSeconds
+		summarizeBy: sum
+		sourceColumn: DurationInSeconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Confidence
+		dataType: double
+		sourceProviderType: real
+		lineageTag: 2a321a5e-f4d7-44a0-a09c-9c845625d5e3
+		sourceLineageTag: Confidence
+		summarizeBy: sum
+		sourceColumn: Confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition transcript_phrases = entity
+		mode: directLake
+		source
+			entityName: transcript_phrases
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

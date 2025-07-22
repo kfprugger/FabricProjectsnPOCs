@@ -1,0 +1,137 @@
+table transcripts
+	lineageTag: 0a89f2ff-0954-4790-8ec3-92db0df9ca7e
+	sourceLineageTag: [dbo].[transcripts]
+
+	column TranscriptionId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 28a0b4d6-25cd-4fb8-8b45-c1598debb1eb
+		sourceLineageTag: TranscriptionId
+		summarizeBy: none
+		sourceColumn: TranscriptionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AudioFileName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 317fccf2-5e19-48ce-9ca8-f866975be9a2
+		sourceLineageTag: AudioFileName
+		summarizeBy: none
+		sourceColumn: AudioFileName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessingTimestamp
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 57c81423-35e1-41b3-8c8b-1c795552181a
+		sourceLineageTag: ProcessingTimestamp
+		summarizeBy: none
+		sourceColumn: ProcessingTimestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessingStatus
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4cadb9ef-cba1-4bee-94f4-0f797cb9a5c7
+		sourceLineageTag: ProcessingStatus
+		summarizeBy: none
+		sourceColumn: ProcessingStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column CallDurationSeconds
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 33e92ec3-03e7-437f-bd5a-fe1afbdda26f
+		sourceLineageTag: CallDurationSeconds
+		summarizeBy: sum
+		sourceColumn: CallDurationSeconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CallDurationHms
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 57f9f2b1-f2e7-46a8-8a11-fd9c3eb1bfbb
+		sourceLineageTag: CallDurationHms
+		summarizeBy: none
+		sourceColumn: CallDurationHms
+
+		annotation SummarizationSetBy = Automatic
+
+	column OverallSentiment
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4f536ad1-e817-4cfb-83fa-b06339b49bed
+		sourceLineageTag: OverallSentiment
+		summarizeBy: none
+		sourceColumn: OverallSentiment
+
+		annotation SummarizationSetBy = Automatic
+
+	column PiiRedactedText
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bc910f73-a290-4134-94fa-0c6514a29526
+		sourceLineageTag: PiiRedactedText
+		summarizeBy: none
+		sourceColumn: PiiRedactedText
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalTokens
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0b4d92c7-6162-4530-ae8a-b19d597f7b73
+		sourceLineageTag: TotalTokens
+		summarizeBy: sum
+		sourceColumn: TotalTokens
+
+		annotation SummarizationSetBy = Automatic
+
+	column LakehouseTranscriptPath
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 62819f47-653c-4415-8add-652ec0ee95af
+		sourceLineageTag: LakehouseTranscriptPath
+		summarizeBy: none
+		sourceColumn: LakehouseTranscriptPath
+
+		annotation SummarizationSetBy = Automatic
+
+	column TranscriptMainTopic
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bae79b5f-f0da-4926-8f56-2223ba1287ae
+		sourceLineageTag: TranscriptMainTopic
+		summarizeBy: none
+		sourceColumn: TranscriptMainTopic
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConversationType
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a8e6e628-ae46-4f8d-b066-5e3714625248
+		sourceLineageTag: ConversationType
+		summarizeBy: none
+		sourceColumn: ConversationType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition transcripts = entity
+		mode: directLake
+		source
+			entityName: transcripts
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

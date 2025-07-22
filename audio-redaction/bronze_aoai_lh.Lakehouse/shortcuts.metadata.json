@@ -1,0 +1,74 @@
+[
+  {
+    "name": "transcripts",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "ff3ac32b-f5ea-49d3-b5d1-3b6d5e7f7b2c",
+        "location": "https://sarjbwu301.dfs.core.windows.net",
+        "subpath": "/transcripts"
+      }
+    }
+  },
+  {
+    "name": "sdk-logs",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "ff3ac32b-f5ea-49d3-b5d1-3b6d5e7f7b2c",
+        "location": "https://sarjbwu301.dfs.core.windows.net",
+        "subpath": "/sdk-logs"
+      }
+    }
+  },
+  {
+    "name": "redacted-audio",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "ff3ac32b-f5ea-49d3-b5d1-3b6d5e7f7b2c",
+        "location": "https://sarjbwu301.dfs.core.windows.net",
+        "subpath": "/redacted-audio"
+      }
+    }
+  },
+  {
+    "name": "processed-audio",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "ff3ac32b-f5ea-49d3-b5d1-3b6d5e7f7b2c",
+        "location": "https://sarjbwu301.dfs.core.windows.net",
+        "subpath": "/processed-audio"
+      }
+    }
+  },
+  {
+    "name": "failed",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "ff3ac32b-f5ea-49d3-b5d1-3b6d5e7f7b2c",
+        "location": "https://sarjbwu301.dfs.core.windows.net",
+        "subpath": "/failed"
+      }
+    }
+  },
+  {
+    "name": "audio-files",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "ff3ac32b-f5ea-49d3-b5d1-3b6d5e7f7b2c",
+        "location": "https://sarjbwu301.dfs.core.windows.net",
+        "subpath": "/audio-files"
+      }
+    }
+  }
+]

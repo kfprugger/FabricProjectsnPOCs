@@ -1,0 +1,75 @@
+table pii_entities
+	lineageTag: d07d3fa6-6691-4a8c-a97e-c166525b8ef6
+	sourceLineageTag: [dbo].[pii_entities]
+
+	column PiiEntityId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 78d3e780-bf4f-4474-b873-14983a6dc0d9
+		sourceLineageTag: PiiEntityId
+		summarizeBy: none
+		sourceColumn: PiiEntityId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TranscriptionId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a5e4b9fb-997c-4105-994a-997becd1bb60
+		sourceLineageTag: TranscriptionId
+		summarizeBy: none
+		sourceColumn: TranscriptionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PiiText
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: beace94b-37dd-46bf-89d8-fcbb73b622cb
+		sourceLineageTag: PiiText
+		summarizeBy: none
+		sourceColumn: PiiText
+
+		annotation SummarizationSetBy = Automatic
+
+	column PiiCategory
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 70671a42-3b9b-45c1-92d4-ef39672e12bc
+		sourceLineageTag: PiiCategory
+		summarizeBy: none
+		sourceColumn: PiiCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column PiiSubcategory
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 503ef30d-d220-41db-ba0d-9894cc26c426
+		sourceLineageTag: PiiSubcategory
+		summarizeBy: none
+		sourceColumn: PiiSubcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConfidenceScore
+		dataType: double
+		sourceProviderType: real
+		lineageTag: 3f5d8c62-de71-4aa1-8f29-2a62a9722a0f
+		sourceLineageTag: ConfidenceScore
+		summarizeBy: sum
+		sourceColumn: ConfidenceScore
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition pii_entities = entity
+		mode: directLake
+		source
+			entityName: pii_entities
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

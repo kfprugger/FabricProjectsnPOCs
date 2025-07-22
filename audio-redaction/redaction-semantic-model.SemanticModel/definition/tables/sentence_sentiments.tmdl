@@ -1,0 +1,89 @@
+table sentence_sentiments
+	lineageTag: ad0b2e87-e95e-41c6-8a61-2133e8eebe76
+	sourceLineageTag: [dbo].[sentence_sentiments]
+
+	column SentenceId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0d474309-b901-4434-a0f0-745920fadb04
+		sourceLineageTag: SentenceId
+		summarizeBy: none
+		sourceColumn: SentenceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TranscriptionId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6c842bc7-f672-467b-a92f-31ea48612a71
+		sourceLineageTag: TranscriptionId
+		summarizeBy: none
+		sourceColumn: TranscriptionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SentenceText
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ddc5e46b-763c-436b-bba8-b6b0f51eda5f
+		sourceLineageTag: SentenceText
+		summarizeBy: none
+		sourceColumn: SentenceText
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sentiment
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 80c2d306-ca70-45af-8bbf-dd427c017355
+		sourceLineageTag: Sentiment
+		summarizeBy: none
+		sourceColumn: Sentiment
+
+		annotation SummarizationSetBy = Automatic
+
+	column PositiveScore
+		dataType: double
+		sourceProviderType: real
+		lineageTag: f3f2c6f9-652f-4b80-b22f-ba862c63831d
+		sourceLineageTag: PositiveScore
+		summarizeBy: sum
+		sourceColumn: PositiveScore
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NeutralScore
+		dataType: double
+		sourceProviderType: real
+		lineageTag: b9337d52-fe8f-438e-906b-6759373ba545
+		sourceLineageTag: NeutralScore
+		summarizeBy: sum
+		sourceColumn: NeutralScore
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NegativeScore
+		dataType: double
+		sourceProviderType: real
+		lineageTag: 655d6fdf-1346-4df1-8215-0c380a22e635
+		sourceLineageTag: NegativeScore
+		summarizeBy: sum
+		sourceColumn: NegativeScore
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition sentence_sentiments = entity
+		mode: directLake
+		source
+			entityName: sentence_sentiments
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

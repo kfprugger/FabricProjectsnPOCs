@@ -1,0 +1,7 @@
+dependencies:
+  - pip:
+      - pydub==0.25.1
+      - azure-cognitiveservices-speech==1.44.0
+      - openai==1.88.0
+      - azure-keyvault-secrets==4.10.0
+      - azure-identity==1.23.0

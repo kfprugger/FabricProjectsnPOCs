@@ -1,0 +1,43 @@
+table key_phrases
+	lineageTag: 5861b784-b22e-4f74-9d3b-e1bdabeee6d3
+	sourceLineageTag: [dbo].[key_phrases]
+
+	column KeyPhraseId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 57c7cafc-053c-4941-928e-60afdf3abdce
+		sourceLineageTag: KeyPhraseId
+		summarizeBy: none
+		sourceColumn: KeyPhraseId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TranscriptionId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 16b96e7e-c092-414e-ae72-b8f8549c6029
+		sourceLineageTag: TranscriptionId
+		summarizeBy: none
+		sourceColumn: TranscriptionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column KeyPhrase
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 89e0c26d-76cf-49c4-9f11-0a8e7e7009c8
+		sourceLineageTag: KeyPhrase
+		summarizeBy: none
+		sourceColumn: KeyPhrase
+
+		annotation SummarizationSetBy = Automatic
+
+	partition key_phrases = entity
+		mode: directLake
+		source
+			entityName: key_phrases
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
