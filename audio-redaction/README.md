@@ -1,4 +1,4 @@
-# ![redaction-icon](/FabricProjectsnPOCs/imgs/redaction-icon.png) Audio Redaction in Microsoft Fabric
+# ![redaction-icon](../imgs/redaction-icon.png) Audio Redaction in Microsoft Fabric
 
 > [!NOTE]
 > This project is a Proof of Concept demonstrating how to use **Azure AI Services** within a **Microsoft Fabric Notebook** to automatically redact Personally Identifiable Information (PII) from audio files stored in a Lakehouse.
@@ -9,7 +9,7 @@ There are two notebooks in this project: one to transcribe and idenitify PHI/PII
 
 ## Workflow Diagram
 
-![Fabric workflow diagram](/FabricProjectsnPOCs/imgs/Call%20Center%20Project.png) 
+![Fabric workflow diagram](../imgs/Call%20Center%20Project.png) 
 ---
 
 ## ✨ Features
