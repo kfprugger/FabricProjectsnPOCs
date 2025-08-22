@@ -130,8 +130,17 @@ Run all the cells in the notebook. The script will:
 Your final setup in the Microsoft Fabric workspace will consist of these key artifacts:
 
 * **Workspace**: The container for all your project components.
-* **Lakehouse**:
-    * `/Files/sample-audio/`: Stores the original audio files.
-    * `/Files/output/`: Stores the processed, redacted audio files.
+* **Lakehouse Tables**:
+    * `transcribe_log`: Stores the history of transcription. Prevents the same .wav file from being transcribed multiple times.
+    * `transcripts`: Stores the enriched transcripts with PII/PHI timestamps.
+    * `pii_entities`: Stores the recognized entities 
+* **Lakehouse /Files**:
+    * `/Files/audio-audio/`: Stores the original audio files.
+    * `/Files/redacted-audio/`: Stores the processed, redacted audio files.
+    * `/Files/transcripts/`: Stores the enriched transcripts with PII/PHI timestamps.
+    * `/Files/processed-audio`: Stores the raw .wav files after they have been processed by the notebook
+    * `/Files/failed`: Stores the raw .wav files that failed to process
+    * `/Files/sdk-logs`: Stores the SDK logs for debugging purposes, if enabled in the transcription notebook
+
 * **Notebooks**: The `AOAInAzSpeech_mk6_1` notebook containing the Python code for transcription and PHI/PII timestamp isolation and the `Audio File Redaction` notebook for audio file redaction.
 * **Secrets**: Credentials for Azure services stored securely in the workspace settings.
